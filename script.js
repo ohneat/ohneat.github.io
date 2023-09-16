@@ -4,7 +4,7 @@ function openPhoto(imageSrc) {
 }
 
 // New code for dynamically adding photos
-const photos = ['roll4/longhorn.jpg', 'roll4/worship_center.jpg', 'roll4/sonic.jpg', 'roll3/fave_tree.jpg', 'roll3/eyes.jpg', 'roll3/light_shadow.jpg', 'roll2/mother_child.jpg', 'roll2/battle_hall.JPG', 'roll2/bananas.jpg', 'roll1/ocho.JPG', 'roll1/path.JPG', 'roll1/water_tower.jpg'];
+const photos = ['roll4/longhorn.jpg', 'roll4/worship_center.jpg', 'roll4/sonic.JPG', 'roll3/fave_tree.jpg', 'roll3/eyes.jpg', 'roll3/light_shadow.jpg', 'roll2/mother_child.jpg', 'roll2/battle_hall.JPG', 'roll2/bananas.jpg', 'roll1/ocho.JPG', 'roll1/path.JPG', 'roll1/water_tower.jpg'];
 
 function addPhotos() {
   const container = document.querySelector('.container');
