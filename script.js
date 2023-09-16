@@ -1,53 +1,28 @@
+// Existing openPhoto function
 function openPhoto(imageSrc) {
-  // Create an overlay element
-  const overlay = document.createElement("div");
-  overlay.style.position = "fixed";
-  overlay.style.top = "0";
-  overlay.style.left = "0";
-  overlay.style.width = "100%";
-  overlay.style.height = "100%";
-  overlay.style.backgroundColor = "rgba(0,0,0,0.9)";
-  overlay.style.display = "flex";
-  overlay.style.justifyContent = "center";
-  overlay.style.alignItems = "center";
-  overlay.style.zIndex = "1000";
-  
-  // Create the image element
-  const img = document.createElement("img");
-  img.src = imageSrc;
-  img.style.maxWidth = "100%";
-  img.style.maxHeight = "100%";
-  img.style.objectFit = "contain";
-  
-  // Add image to overlay
-  overlay.appendChild(img);
-  
-  // Add back button
-  const backButton = document.createElement("button");
-  backButton.textContent = "Back";
-  backButton.style.position = "absolute";
-  backButton.style.top = "16px";
-  backButton.style.left = "16px";
-  backButton.style.padding = "8px 16px";
-  backButton.style.background = "#333";
-  backButton.style.color = "white";
-  backButton.style.fontSize = "16px";
-  backButton.style.cursor = "pointer";
-  
-  backButton.onclick = function() {
-    document.body.removeChild(overlay);
-  };
-
-  // Add back button to overlay
-  overlay.appendChild(backButton);
-
-  // Add overlay to body
-  document.body.appendChild(overlay);
-
-  // Close overlay when clicking outside the image
-  overlay.onclick = function(e) {
-    if (e.target === overlay) {
-      document.body.removeChild(overlay);
-    }
-  };
+  // ... existing code
 }
+
+// New code for dynamically adding photos
+const photos = ['ocho_roll1.JPG', 'path_roll1.JPG', 'water_tower_roll1.jpg'];
+
+function addPhotos() {
+  const container = document.querySelector('.container');
+
+  photos.forEach((photo) => {
+    const photoBox = document.createElement('div');
+    photoBox.className = 'photo-box';
+    photoBox.setAttribute('onclick', `openPhoto('photos/${photo}')`);
+
+    const img = document.createElement('img');
+    img.src = `photos/${photo}`;
+    img.alt = `Photo ${photo}`;
+    img.setAttribute('loading', 'lazy');
+
+    photoBox.appendChild(img);
+    container.appendChild(photoBox);
+  });
+}
+
+// Call the function when the page loads
+window.onload = addPhotos;
