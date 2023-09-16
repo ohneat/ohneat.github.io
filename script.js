@@ -4,7 +4,7 @@ function openPhoto(imageSrc) {
 }
 
 // New code for dynamically adding photos
-const photos = ['ocho_roll1.JPG', 'path_roll1.JPG', 'water_tower_roll1.jpg'];
+const photos = ['roll1/ocho.JPG', 'roll1/path.JPG', 'roll1/water_tower.jpg'];
 
 function addPhotos() {
   const container = document.querySelector('.container');
